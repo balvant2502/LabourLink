@@ -1,0 +1,17 @@
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables (Sensitive API keys/DB URIs)
+.env
+.env.local
+.env.production
+
+# Operating system files
+.DS_Store
+Thumbs.db
