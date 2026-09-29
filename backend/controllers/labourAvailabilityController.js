@@ -75,7 +75,7 @@ const getLabourList = async (req, res) => {
 			return res.status(403).json({ message: 'Only seekers can search labour listings.' });
 		}
 
-		if (!user?.location?.coordinates) {
+		if (!user || !user.location || !user.location.coordinates) {
 			return res.status(400).json({ message: 'User location is not configured.' });
 		}
 

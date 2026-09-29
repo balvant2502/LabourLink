@@ -16,8 +16,6 @@ import bookingRoutes from './routes/bookingRoutes.js';
 import labourAvailabilityRoutes from './routes/labourAvailabilityRoutes.js';
 import reviewRoutes from './routes/reviewRoutes.js';
 
-
-
 const app =express();
 
 const PORT = process.env.PORT || 5000;
