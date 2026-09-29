@@ -176,8 +176,8 @@ export const login = async (req, res) => {
 
 export const refreshAccessToken = async (req, res) => {
     try {
-        const tokenFromCookie = req.cookies?.jwt;
-        const tokenFromBody = req.body?.refreshToken;
+        const tokenFromCookie = req.cookies ? req.cookies.jwt : undefined;
+        const tokenFromBody = req.body ? req.body.refreshToken : undefined;
         const refreshToken = tokenFromCookie || tokenFromBody;
 
         if (!refreshToken) {
@@ -285,7 +285,7 @@ export const updateUserProfile = async (req, res) => {
 
         if (updates.address) {
             updates.address = {
-                ...(user.address?.toObject ? user.address.toObject() : user.address || {}),
+                ...(user.address && user.address.toObject ? user.address.toObject() : user.address || {}),
                 ...(updates.address || {})
             };
         }
